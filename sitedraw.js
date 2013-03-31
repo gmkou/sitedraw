@@ -1,10 +1,15 @@
 javascript:
 var d=0,e=0,f=0;
-
+var svgElement=0;
 window.addEventListener("mousedown",
 			function(a){d=1;
 				    e=a.clientX;
 				    f=a.clientY;
+				    svgElement=document.createElementNS("http://www.w3.org/2000/svg","svg");
+				    svgElement.setAttribute("xmlns","http://www.w3.org/2000/svg");
+				    svgElement.setAttribute("version","1.1");
+				    svgElement.setAttribute("style","position: absolute; top:0px; left:0px; z-index:1000; ");
+				    document.body.appendChild(svgElement);
 				    a.preventDefault();
 				   },!1);
 window.addEventListener("mouseup",
@@ -12,10 +17,7 @@ window.addEventListener("mouseup",
 				    a.preventDefault()},!1);
 window.addEventListener("mousemove",
 			function(a){
-			    if(d){var c=document.createElementNS("http://www.w3.org/2000/svg","svg");
-				  c.setAttribute("xmlns","http://www.w3.org/2000/svg");
-				  c.setAttribute("version","1.1");
-				  c.setAttribute("style","position: absolute; top:0px; left:0px; z-index:1000; ");
+			    if(d){
 				  var b=document.createElementNS("http://www.w3.org/2000/svg","line");
 				  b.setAttribute("x1",a.clientX);
 				  b.setAttribute("y1",a.clientY);
@@ -26,8 +28,7 @@ window.addEventListener("mousemove",
 						 ","+Math.floor(256*Math.random())+
 						 ","+Math.floor(256*Math.random())+
 						 ");stroke-width:2;)");
-				  c.appendChild(b);
-				  document.body.appendChild(c);
+				  svgElement.appendChild(b);
 				  e=a.clientX;
 				  f=a.clientY;
 				  a.preventDefault()}},!1
