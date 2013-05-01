@@ -1,12 +1,21 @@
-* SiteDraw.js
+SiteDraw.js
+================================
 
 Draw lines on WebSite.
 
-** Usage
+Usage
+-------------------------------
 
 - add bookmarklet.mini.js to your bookmark.
 - click it.
 
-* copyright
+
+ToDo
+-------------------------------
+- [ ] ???
+
+
+Copyright
+-------------------------------
 
 (c) 2013 Kosuke.Nagano. All rights reserved.
