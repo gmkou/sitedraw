@@ -1,4 +1,3 @@
-javascript:
 var d=0,e=0,f=0;
 var svgElement=0;
 window.addEventListener("mousedown",
