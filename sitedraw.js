@@ -37,6 +37,22 @@ function funcMouseMove(a) {
     }
 }
 
+function onKeyEvent() {
+    var code = event.keyCode;
+    var returnValue = true;
+    switch (code) {
+    case 27: //Escape key
+	window.removeEventListener("mousedown",funcMouseDown,!1);
+	window.removeEventListener("mouseup",funcMouseUp, !1);
+	window.removeEventListener("mousemove",funcMouseMove, !1);
+        break;
+    default:
+        break;
+    }
+    return returnValue;
+}
+
 window.addEventListener("mousedown",funcMouseDown,!1);
 window.addEventListener("mouseup",funcMouseUp, !1);
 window.addEventListener("mousemove",funcMouseMove, !1);
+window.document.onkeydown = onKeyEvent;
